@@ -8,3 +8,7 @@ services:
       - "./server:/app"
     ports:
       - "3000:3000"
+    environment:
+      - MONGO_URL=mongodb://mongo:27017/
+  mongo:
+    image: mongo

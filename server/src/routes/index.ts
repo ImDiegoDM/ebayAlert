@@ -1,6 +1,6 @@
 import { Express } from 'express'
-import home from './home';
+import searchPhrase from './emails';
 
 export default function(app:Express){
-  home(app)
+  searchPhrase(app)
 }
