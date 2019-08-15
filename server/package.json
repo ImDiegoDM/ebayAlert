@@ -4,7 +4,8 @@
   "description": "Server side of an aplication that manage ebay alerts",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "gulp"
   },
   "author": "Diego Matias de Oliveira (https://diegomatias.dev)",
   "license": "ISC",
