@@ -1,5 +1,4 @@
 import * as validator from 'validator'
-import { ObjError } from '../../objError';
 
 export interface SearchPhrase{
   phrase:string;
