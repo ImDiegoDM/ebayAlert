@@ -1,6 +1,6 @@
-import { SearchPhrase, collection, Alert } from "./interfaces";
 import { mongo } from '../../database';
+import { collection, ISearchPhrase } from './interfaces';
 
-export async function getAll(query:any={}):Promise<Alert[]>{
-  return mongo.collection(collection).getAll<Alert>(query)
+export async function getAll(query: any= {}): Promise<ISearchPhrase[]> {
+  return mongo.collection(collection).getAll<ISearchPhrase>(query);
 }
