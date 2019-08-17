@@ -5,11 +5,12 @@ import { ISearchPhrase } from '../interfaces';
 const collectionName = 'search_phrases';
 
 describe('Test for search_phrases/insert_one.ts', () => {
-  afterAll(async () => {
+
+  beforeEach(async () => {
     await mongo.collection(collectionName).remove();
   });
 
-  beforeEach(async () => {
+  afterAll(async () => {
     await mongo.collection(collectionName).remove();
     await mongo.close();
   });
