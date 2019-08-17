@@ -10,5 +10,8 @@ services:
       - "3000:3000"
     environment:
       - MONGO_URL=mongodb://mongo:27017/
+      - DB_NAME=ebay_alert_db
   mongo:
     image: mongo
+    ports:
+      - "27017:27017"

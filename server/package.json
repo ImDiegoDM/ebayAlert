@@ -4,7 +4,7 @@
   "description": "Server side of an aplication that manage ebay alerts",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "start": "gulp"
   },
   "author": "Diego Matias de Oliveira (https://diegomatias.dev)",
@@ -27,6 +27,9 @@
   },
   "devDependencies": {
     "@types/express": "^4.17.0",
+    "@types/jest": "^24.0.17",
+    "jest": "^24.9.0",
+    "ts-jest": "^24.0.2",
     "tslint": "^5.18.0"
   }
 }

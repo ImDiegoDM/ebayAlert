@@ -4,7 +4,7 @@ const nodemon = require('gulp-nodemon');
 
 const MongoClient = require('mongodb').MongoClient;
 const url = process.env.MONGO_URL;
-const dbName = 'ebay_alert_db';
+const dbName = process.env.DB_NAME;
 
 const webpackConfig = require('./webpack.config.js')
 

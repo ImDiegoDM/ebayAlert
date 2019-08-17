@@ -1,10 +1,10 @@
 import { Express } from 'express';
-import get from './get';
+import getAll from './get_all';
 import post from './post';
 
-const route = '/emails';
+const route = '/search_phrases';
 
 export default function(app: Express) {
-  app.get(route, get);
+  app.get(route, getAll);
   app.post(route, post);
 }
