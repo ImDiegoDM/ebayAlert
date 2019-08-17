@@ -1,8 +1,7 @@
 import { Request, Response } from 'express';
 import { ObjectId } from 'mongodb';
 import { isEmail } from 'validator';
-import { getOne } from '../../model/search_phrases';
-import { update } from '../../model/search_phrases/update';
+import { getOne, update } from '../../model/search_phrases';
 
 function CleanObj(obj: any) {
   const cleanedObj: any = {};

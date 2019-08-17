@@ -1,4 +1,5 @@
 import { Express } from 'express';
+import del from './delete';
 import getAll from './get_all';
 import getOne from './get_one';
 import post from './post';
@@ -11,4 +12,5 @@ export default function(app: Express) {
   app.post(route, post);
   app.get(route + '/:id', getOne);
   app.put(route + '/:id', put);
+  app.delete(route + '/:id', del);
 }
