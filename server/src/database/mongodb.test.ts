@@ -20,8 +20,6 @@ describe('testing mongodb file', () => {
 
     const res = await mongo.collection(collectionName).insertOne(obj);
 
-    expect(res).toHaveProperty('insertedId');
-
     const returnedObj = await mongo.collection(collectionName).getOne({_id: res.insertedId});
 
     expect(returnedObj).toEqual(obj);
@@ -51,5 +49,23 @@ describe('testing mongodb file', () => {
     const find = await mongo.collection(collectionName).getAll({lastName: 'doo'});
 
     expect(find.length).toEqual(3);
+  });
+
+  it('should update correctly', async () => {
+    const obj = {
+      lastName: 'Foo',
+      name: 'John',
+    };
+
+    const res = await mongo.collection(collectionName).insertOne(obj);
+
+    await mongo.collection(collectionName).update(
+      {_id: res.insertedId},
+      {$set: {name: 'Luciano'}},
+    );
+
+    const returnedObj = await mongo.collection(collectionName).getOne({_id: res.insertedId});
+
+    expect(returnedObj.name).toEqual('Luciano');
   });
 });

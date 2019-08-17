@@ -47,7 +47,10 @@ function getOne<T= any>(collection: string, query: any= {}): Promise<T> {
       const db = await getDb();
 
       db.collection(collection).findOne(query, (err, result) => {
-        if (err) { rej(err); }
+        if (err) {
+          rej(err);
+          return;
+        }
 
         res(result);
       });
@@ -114,6 +117,25 @@ function remove(collection: string, query = {}): Promise<mongodb.DeleteWriteOpRe
   });
 }
 
+function update(collection: string, filter: any, value: any): Promise<mongodb.UpdateWriteOpResult> {
+  return new Promise(async (res, rej) => {
+    try {
+      const db = await getDb();
+
+      db.collection(collection).updateOne(filter, value, (err, result) => {
+        if (err) {
+          rej(err);
+          return;
+        }
+
+        res(result);
+      });
+    } catch (err) {
+      rej(err);
+    }
+  });
+}
+
 async function close(force?: boolean) {
   await client.close(force);
   client = undefined;
@@ -137,6 +159,9 @@ export const mongo = {
       },
       remove(query?: any) {
         return remove(collection, query);
+      },
+      update(filter: any, value: any) {
+        return update(collection, filter, value);
       },
     };
   },
