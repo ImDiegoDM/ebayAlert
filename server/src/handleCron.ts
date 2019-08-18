@@ -1,7 +1,7 @@
 import { ObjectId } from 'bson';
 import moment from 'moment';
 import { getProducts } from './ebay_api';
-import { sendTextEmail, sendHtmlEmail } from './mailer/mailer';
+import { sendHtmlEmail } from './mailer/mailer';
 import { productsTemplate } from './mailer/template';
 import { getAll, ISearchPhrase, update } from './model/search_phrases';
 

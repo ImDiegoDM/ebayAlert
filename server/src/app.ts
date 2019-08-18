@@ -1,4 +1,5 @@
 import bodyParser from 'body-parser';
+import cors from 'cors';
 import express from 'express';
 import cron from 'node-cron';
 import { handleCron } from './handleCron';
@@ -8,6 +9,7 @@ const port = 3000;
 const app = express();
 
 app.use(bodyParser.json());
+app.use(cors());
 
 routes(app);
 
