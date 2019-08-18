@@ -1,6 +1,8 @@
 import { ObjectId } from 'bson';
 import moment from 'moment';
-import { sendTextEmail } from './mailer/mailer';
+import { getProducts } from './ebay_api';
+import { sendTextEmail, sendHtmlEmail } from './mailer/mailer';
+import { productsTemplate } from './mailer/template';
 import { getAll, ISearchPhrase, update } from './model/search_phrases';
 
 export async function handleCron() {
@@ -11,17 +13,24 @@ export async function handleCron() {
     const dif = moment().diff(time, 'minute');
 
     if (dif >= parseInt(searchPhrase.howOften, 10)) {
-      await sendTextEmail(searchPhrase.email, 'Ebay products alert', `send email products from ${searchPhrase.phrase}`)
-      .catch((err) => console.log(`eamil error: ${err}`));
+      try {
+        const products = await getProducts(searchPhrase.phrase);
 
-      const now = moment().format('YYYY-MM-DD HH:mm');
+        const template = productsTemplate(searchPhrase.phrase, products);
 
-      console.log(now);
+        await sendHtmlEmail(searchPhrase.email, 'Ebay products alert', template);
 
-      await update({_id: new ObjectId(searchPhrase._id)}, {lastTimeSent: now})
-        .catch((err) => console.log(`update error: ${err}`));
+        const now = moment().format('YYYY-MM-DD HH:mm');
 
+        await update({_id: new ObjectId(searchPhrase._id)}, {lastTimeSent: now});
+
+      } catch (error) {
+        console.log(error);
+        console.log('opss.. it seems have ocurred an error trying to send a email');
+      }
+    } else {
+      console.log(`dif: ${dif}, howOften: ${searchPhrase.howOften}`);
     }
-    console.log(`saved time:${time.format('HH:mm')} cusrrent time:${moment().format('HH:mm')} passed ${dif} minutes`);
+
   }
 }
