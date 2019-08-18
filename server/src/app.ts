@@ -1,5 +1,7 @@
 import bodyParser from 'body-parser';
 import express from 'express';
+import cron from 'node-cron';
+import { handleCron } from './handleCron';
 import routes from './routes';
 
 const port = 3000;
@@ -12,3 +14,5 @@ routes(app);
 app.listen(port, () => {
   console.log(`The server is runing on port ${port}`);
 });
+
+cron.schedule('* * * * *', handleCron);

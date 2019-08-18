@@ -4,7 +4,7 @@ const collection = 'search_phrases';
 // setup env variables for test
 process.env = Object.assign(process.env, { 
   DB_NAME:'ebay_alert_db_test',
-  MONGO_URL:'mongodb://localhost:27017/'
+  MONGO_URL:'mongodb://localhost:27017/',
 });
 
 // create the collection for use in tests

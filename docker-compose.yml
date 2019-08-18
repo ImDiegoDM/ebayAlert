@@ -7,11 +7,23 @@ services:
     volumes:
       - "./server:/app"
     ports:
-      - "3000:3000"
+      - 3000:3000
     environment:
       - MONGO_URL=mongodb://mongo:27017/
       - DB_NAME=ebay_alert_db
+      - SMTP_HOST=mailhog
+      - SMTP_PORT=1025
+      - SMTP_SECURE=false
   mongo:
     image: mongo
     ports:
-      - "27017:27017"
+      - 27017:27017
+  mongo-express:
+    image: mongo-express
+    restart: always
+    ports:
+      - 8081:8081
+  mailhog:
+    image: mailhog/mailhog
+    ports:
+      - 8025:8025

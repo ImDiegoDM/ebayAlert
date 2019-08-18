@@ -4,7 +4,8 @@ import { collection, ISearchPhrase } from './interfaces';
 interface ISearchPhraseUpdate {
   email?: string;
   phrase?: string;
-  howOften?: 2 | 10 | 30;
+  howOften?: '2' | '10' | '30';
+  lastTimeSent?: string;
 }
 
 export async function update(filter: any, value: ISearchPhraseUpdate) {

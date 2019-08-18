@@ -5,14 +5,14 @@ const collectionName = 'search_phrases';
 describe('testing mongodb file', () => {
   afterAll(async () => {
     await mongo.collection(collectionName).remove();
-    await mongo.close(true);
+    await mongo.close();
   });
 
   beforeEach(async () => {
     await mongo.collection(collectionName).remove();
   });
 
-  it('should instert and return a object correctly', async () => {
+  it('should insert and return a object correctly', async () => {
     const obj = {
       lastName: 'Foo',
       name: 'John',
@@ -26,7 +26,7 @@ describe('testing mongodb file', () => {
 
   });
 
-  it('should inster a array of files and return correctly', async () => {
+  it('should insert a array of files and return correctly', async () => {
     const objs = [
       {
         lastName: 'doo',

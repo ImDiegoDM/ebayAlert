@@ -24,12 +24,12 @@ async function getDb() {
   return client.db(dbName);
 }
 
-function getAll<T= any>(collection: string, query: any= {}): Promise<T[]> {
+function getAll<T= any>(collection: string, query: any= {}, options?: mongodb.FindOneOptions): Promise<T[]> {
   return new Promise(async (res, rej) => {
     try {
       const db = await getDb();
 
-      db.collection(collection).find(query).toArray((err, result) => {
+      db.collection(collection).find(query, options).toArray((err, result) => {
         if (err) {
           rej(err);
         }
@@ -41,12 +41,12 @@ function getAll<T= any>(collection: string, query: any= {}): Promise<T[]> {
   });
 }
 
-function getOne<T= any>(collection: string, query: any= {}): Promise<T> {
+function getOne<T= any>(collection: string, query: any= {}, options?: mongodb.FindOneOptions): Promise<T> {
   return new Promise(async (res, rej) => {
     try {
       const db = await getDb();
 
-      db.collection(collection).findOne(query, (err, result) => {
+      db.collection(collection).findOne(query, options, (err, result) => {
         if (err) {
           rej(err);
           return;
@@ -145,11 +145,11 @@ export const mongo = {
   close,
   collection(collection: string) {
     return{
-      getOne<T= any>(query: any= {}) {
-        return getOne<T>(collection, query);
+      getOne<T= any>(query: any= {}, options?: mongodb.FindOneOptions) {
+        return getOne<T>(collection, query, options);
       },
-      getAll<T= any>(query: any= {}) {
-        return getAll<T>(collection, query);
+      getAll<T= any>(query: any= {}, options?: mongodb.FindOneOptions) {
+        return getAll<T>(collection, query, options);
       },
       insertOne<T>(obj: T) {
         return instertOne<T>(collection, obj);
