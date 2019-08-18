@@ -36,6 +36,8 @@ export default async function(req: Request, res: Response) {
   }
 
   if (cleanedObj.howOften) {
+    if (typeof cleanedObj.howOften === 'number') { cleanedObj.howOften = cleanedObj.howOften.toString(); }
+
     if (cleanedObj.howOften !== '2' && cleanedObj.howOften !== '10' && cleanedObj.howOften !== '30') {
       res.status(422).send({
         erros: {
@@ -47,6 +49,12 @@ export default async function(req: Request, res: Response) {
   }
 
   try {
+    const getOneResult = await getOne({email: cleanedObj.email, phrase: cleanedObj.phrase});
+    if (getOneResult) {
+      res.status(400).send('This phrase for this email alredy exists');
+      return;
+    }
+
     await update({_id: new ObjectId(req.params.id)}, cleanedObj);
     const result = await getOne({_id: new ObjectId(req.params.id)});
     res.send(result);
