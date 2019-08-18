@@ -1,11 +1,9 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import styled from 'styled-components';
 import { fetchPhrases } from '../../actions';
-
-const H1 = styled.h1`
-  color: pink;
-`;
+import { Home } from '../Home';
+import { Modal } from '../Modal/Modal';
+import { GlobalStyle } from './GlobalStyle';
 
 const App: React.FC = () => {
   const dispatch = useDispatch();
@@ -14,9 +12,11 @@ const App: React.FC = () => {
     dispatch(fetchPhrases());
   }, [dispatch]);
 
-  return (
-    <H1>Hello World!</H1>
-  );
+  return <>
+    <GlobalStyle/>
+    <Home/>
+    <Modal/>
+  </>;
 };
 
 export default App;

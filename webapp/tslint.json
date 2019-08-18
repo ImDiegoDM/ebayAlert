@@ -5,7 +5,7 @@
     "jsRules": {},
     "rules": {
         "quotemark": [true, "single", "jsx-double"],
-        "react-hooks/exhaustive-deps":false
+        "interface-name":false
     },
     "rulesDirectory": []
 }
