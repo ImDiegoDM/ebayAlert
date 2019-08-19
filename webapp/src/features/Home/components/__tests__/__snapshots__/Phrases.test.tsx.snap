@@ -1,0 +1,108 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Phrases/> should match snapshot when store state is fetched 1`] = `
+.c1 {
+  width: 300px;
+  height: 150px;
+  position: relative;
+  box-shadow: 0 0 10px 3px #b9b4b4;
+  border-radius: 10px;
+  margin: 10px 15px;
+  cursor: pointer;
+}
+
+.c3 {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+
+.c5 {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+.c4 {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 1.7em;
+  width: calc( 100% - 20px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c2 {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: red;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  padding: 10px 0;
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    <div
+      class="c2"
+    >
+      <svg
+        aria-hidden="true"
+        class="svg-inline--fa fa-trash-alt fa-w-14 "
+        data-icon="trash-alt"
+        data-prefix="fas"
+        focusable="false"
+        role="img"
+        viewBox="0 0 448 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M32 464a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V128H32zm272-256a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zM432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16z"
+          fill="currentColor"
+        />
+      </svg>
+    </div>
+    <span
+      class="c3"
+    >
+      test@test.com
+    </span>
+    <div
+      class="c4"
+      title="drone"
+    >
+      drone
+    </div>
+    <span
+      class="c5"
+    >
+      2
+    </span>
+  </div>
+</div>
+`;
+
+exports[`<Phrases/> should match snapshot when store state is fetching 1`] = `
+<div
+  class="loader"
+>
+  Loading...
+</div>
+`;

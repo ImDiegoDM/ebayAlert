@@ -32,8 +32,9 @@ export function Phrases(props: PhrasesProps) {
   }
 
   return<Container>
-    {phrasesState.data.map((phrase) => {
+    {phrasesState.data.map((phrase, index) => {
       return <CardPhrase
+      key={index}
       onClick={() => props.onSelect(phrase)}
       phrase={phrase}
       onDelete={() => props.onDelete(phrase._id)}

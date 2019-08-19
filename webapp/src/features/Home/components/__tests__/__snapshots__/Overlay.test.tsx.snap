@@ -1,0 +1,112 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Overlay/> Overlay closed should match snapshot 1`] = `
+.c0 {
+  width: 300px;
+  background-color: white;
+  -webkit-transition: all 250ms;
+  transition: all 250ms;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  -webkit-transform: scaleX(0);
+  -ms-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transform-origin: right;
+  -ms-transform-origin: right;
+  transform-origin: right;
+  box-shadow: 0 0 11px 4px #00000047;
+  padding: 20px;
+  z-index: 15;
+}
+
+.c1 {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  color: gray;
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    <svg
+      aria-hidden="true"
+      class="svg-inline--fa fa-times fa-w-11 "
+      data-icon="times"
+      data-prefix="fas"
+      focusable="false"
+      role="img"
+      viewBox="0 0 352 512"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
+        fill="currentColor"
+      />
+    </svg>
+  </div>
+  Overlay content
+</div>
+`;
+
+exports[`<Overlay/> Overlay open should match snapshot 1`] = `
+.c0 {
+  width: 300px;
+  background-color: white;
+  -webkit-transition: all 250ms;
+  transition: all 250ms;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  -webkit-transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  transform: scaleX(1);
+  -webkit-transform-origin: right;
+  -ms-transform-origin: right;
+  transform-origin: right;
+  box-shadow: 0 0 11px 4px #00000047;
+  padding: 20px;
+  z-index: 15;
+}
+
+.c1 {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  color: gray;
+}
+
+<div
+  class="c0"
+  open=""
+>
+  <div
+    class="c1"
+  >
+    <svg
+      aria-hidden="true"
+      class="svg-inline--fa fa-times fa-w-11 "
+      data-icon="times"
+      data-prefix="fas"
+      focusable="false"
+      role="img"
+      viewBox="0 0 352 512"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
+        fill="currentColor"
+      />
+    </svg>
+  </div>
+  Overlay content
+</div>
+`;

@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SearchBar/> should match snapshot 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+<form
+  class="c0"
+>
+  <label
+    class="c1"
+  >
+    Email
+    <input
+      required=""
+      type="email"
+      value="test@test.com"
+    />
+  </label>
+  <label
+    class="c1"
+  >
+    Phrase
+    <input
+      required=""
+      type="text"
+      value="drone"
+    />
+  </label>
+  <label
+    class="c1"
+  >
+    How often
+    <select>
+      <option
+        value="2"
+      >
+        2
+      </option>
+      <option
+        value="10"
+      >
+        10
+      </option>
+      <option
+        value="30"
+      >
+        30
+      </option>
+    </select>
+  </label>
+  <div>
+    <input
+      type="submit"
+    />
+  </div>
+</form>
+`;

@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Error/> should match snapshot 1`] = `
+.c0 {
+  margin: 50px 0;
+  text-align: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+<div
+  class="c0"
+>
+  <span>
+    Opss.. it seems an error has ocurred getting the alerts
+  </span>
+  <div>
+    <button>
+       try again 
+    </button>
+  </div>
+</div>
+`;

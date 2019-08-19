@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Error/> should match snapshot when the store state is closed 1`] = `null`;
+
+exports[`<Error/> should match snapshot when the store state is open 1`] = `
+.c0 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.51);
+  z-index: 20;
+}
+
+.c1 {
+  width: 450px;
+  height: 300px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: white;
+  border-radius: 10px;
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  -webkit-box-pack: space-evenly;
+  -webkit-justify-content: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
+  text-align: center;
+  padding: 20px;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c3 {
+  margin-right: 15px;
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    <h2>
+      Modal Text
+    </h2>
+    <div
+      class="c2"
+    >
+      <button
+        class="c3"
+      >
+        Cancel
+      </button>
+      <button
+        class="c3"
+      >
+        Confirm
+      </button>
+    </div>
+  </div>
+</div>
+`;
