@@ -16,6 +16,7 @@ if you have the prerequisites to run you will need to do:
 - Insert a ebay developer token in the docker-compose.yml
 - Run ```docker-compose up```
 - Access the webapp in the url http://localhost:3000
+- To see the emails that are sended you can access the mailhog webapp in the url http://localhost:8025
 
 > if you are running the project for the first time before access the webapp please check if the server is running,  the installation of the dependecies can take while
 
